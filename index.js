@@ -1,8 +1,15 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
 require('dotenv').config();
 const PORT = process.env.PORT || 4000;
+
+app.use(cors({
+    origin: 'http://localhost:3001', // Your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+    credentials: true // Allow cookies if needed
+}));
 
 app.use(express.json());
 

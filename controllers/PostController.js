@@ -3,6 +3,7 @@ const Post = require('../model/PostModel');
 exports.createPost = async(req,res) => {
     try{
         const {title,body} = req.body;
+        console.log(title,body);
         const post = new Post({
             title,body
         });
